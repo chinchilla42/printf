@@ -1,48 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/17 16:07:28 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/02/17 16:07:35 by cregazzo         ###   ########.fr       */
+/*   Created: 2021/02/18 14:36:59 by cregazzo          #+#    #+#             */
+/*   Updated: 2021/02/18 14:59:40 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <stdlib.h>
 
-# include "ft_printf.h"
-
-void	ft_putchar(char c)
+size_t	ft_strlen(const char *s)
 {
-	write(1, &c, 1);
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+static int	nb_char(int n, int len)
 {
-	long	nb;
-	long	diviseur;
-
-	nb = (long)nbr;
-	diviseur = 0;
-	if (nb < 0)
-		{
-			nb = nb * -1;
-			ft_putchar('-');
-		}
-		while (base[diviseur])
-			diviseur++;
-		if (nb < diviseur)
-			ft_putchar(base[nb]);
-		if (nb >= diviseur)
-		{
-			ft_putnbr_base(nb / diviseur, base);
-			ft_putchar(base[nb % diviseur]);
-		}
-	}
-
-static int	nb_char(long n, int len)
-{
-	long nb;
+	int	nb;
 
 	nb = 1;
 	while (n /len != 0)
@@ -53,7 +37,7 @@ static int	nb_char(long n, int len)
 	return (nb);
 }
 
-char		*ft_itoa_base(long n, char *base)
+char		*ft_itoa_base(int n, char *base)
 {
 	int		i;
 	char	*dest;
@@ -79,18 +63,15 @@ char		*ft_itoa_base(long n, char *base)
 	return (dest);
 }
 
-void	ft_putnbr_unsigned(unsigned n)
+int main ()
 {
-	if (n < 0)
-	{
-		ft_putchar('-');
-		n = n * -1;
-	}
-	if (n >= 10)
-	{
-		ft_putnbr_unsigned(n / 10);
-		ft_putnbr_unsigned(n % 10);
-	}
-	if (n < 10)
-		ft_putchar(n + 48);
+	int i = 0;
+	int tab[5] = {-2147483648, -42, 0, 42, 2147483647};
+	char *base = "0123456789abcdef";
+
+	while (i < 5)
+		printf("%s\n", ft_itoa_base(tab[i++], base));
+
+	return 0;
 }
+

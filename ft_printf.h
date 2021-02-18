@@ -24,3 +24,6 @@ typedef struct	s_data
 }				t_data;
 
 int		ft_printf(char *str, ...);
+void	ft_putnbr_base(int nbr, char *base);
+char		*ft_itoa_base(long n, char *base);
+void	ft_putnbr_unsigned(unsigned n);

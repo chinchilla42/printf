@@ -36,21 +36,58 @@ void	treat_int(t_data *data)
 	ft_putnbr_fd(n, 1);
 }
 
+void	treat_unsigned(t_data *data)
+{
+	unsigned n;
+	n = va_arg(data->arg, int);
+	ft_putnbr_unsigned(n);
+}
 
+void	treat_hexa_min(t_data *data)
+{
+	int n;
+
+	n = va_arg(data->arg, int);
+	ft_putnbr_base(n, "0123456789abcdef");
+}
+
+void	treat_hexa_maj(t_data *data)
+{
+	int n;
+
+	n = va_arg(data->arg, int);
+	ft_putnbr_base(n, "0123456789ABCDEF");
+}
+#include <stdio.h>
+void	treat_ptr(t_data* data)
+{
+	int *p;
+	char* ret;
+
+	p = va_arg(data->arg, int*);
+	
+	ret = ft_itoa_base((long)p, "0123456789abcdef");
+	write(1, "0x", 2);
+	write(1, ret, ft_strlen(ret));
+}
 
 void	get_arg(t_data *data, char c)
 {
 	if (c == 'c')
 		treat_char(data);
-	if (c == 's')
+	else if (c == 's')
 		treat_str(data);
-	if (c == 'd' || c == 'i')
+	else if (c == 'd' || c == 'i')
 		treat_int(data);
-	else if (c == 'x' || c == 'X')
-		treat_hexa(data);
-	
-	//else if (c == 'p')
-	if (c == '%')
+	else if (c == 'u')
+		treat_unsigned(data);
+	else if (c == 'x')
+		treat_hexa_min(data); 
+	else if (c == 'X')
+		treat_hexa_maj(data);
+	else if (c == 'p')
+		treat_ptr(data);
+	else if (c == '%')
 		write(1, "%", 1);
 	data->i++;
 }
