@@ -15,11 +15,23 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 
+# define TYPE "cspdiuxX%"
+# define FLAG "0-*."
+
 typedef struct	s_data
 {
 	int i;
 	int count;
 	va_list arg;
+	int minus;
+	int zero;
+	int is_width;
+	int width;
+	int is_precision;
+	int precision;
+	char type;
+
+
 
 }				t_data;
 
