@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_ptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 15:00:25 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/02/17 14:52:39 by cregazzo         ###   ########.fr       */
+/*   Created: 2021/02/23 11:20:05 by cregazzo          #+#    #+#             */
+/*   Updated: 2021/02/23 11:20:15 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft/libft.h"
+# include "ft_printf.h"
 
-typedef struct	s_data
+void	display_ptr(t_data* data)
 {
-	int i;
-	int count;
-	va_list arg;
-	int minus;
-	int zero;
-	int  width;
-	int dot;
-	int precision;
+	int *p;
+	char* ret;
 
-}				t_data;
-
-int		ft_printf(const char *fmt, ...);
-void	ft_putnbr_base(int nbr, char *base);
-char		*ft_itoa_base(long n, char *base);
-void	ft_putnbr_unsigned(unsigned n);
+	p = va_arg(data->arg, int*);
+	
+	ret = ft_itoa_base((long)p, "0123456789abcdef");
+	write(1, "0x", 2);
+	write(1, ret, ft_strlen(ret));
+}

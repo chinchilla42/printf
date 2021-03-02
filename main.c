@@ -23,6 +23,7 @@ int main ()
 	//ft_printf("%p est l'adresse de la valeur %d\n", p, n);
     printf("45 en hexa = %x\n", 45);
     ft_printf("45 en hexa = %x\n", 45);
+    
 return (0);
 }
 
