@@ -12,14 +12,27 @@
 
 #include "ft_printf.h"
 
-void	display_ptr(t_data* data)
+void		display_ptr(va_list arg, t_format *fmt)
 {
-	int *p;
-	char* ret;
+	char			*base;
+	long long		data;
 
-	p = va_arg(data->arg, int*);
-	
-	ret = ft_itoa_base((long)p, "0123456789abcdef");
-	write(1, "0x", 2);
-	write(1, ret, ft_strlen(ret));
+	data = va_arg(arg, unsigned long);
+	base = HEX_LOWER;
+	if (data < 0)
+        fmt->data_len = ft_nbrlen_base(-1 * data, base, fmt);
+    else
+		fmt->data_len = ft_nbrlen_base(data, base, fmt);
+	if (fmt->minus == 0)
+        print_space(fmt, data);
+	if (data < 0 )
+        ft_putchar('-', fmt);
+	ft_putstr("0x", fmt);
+	print_zero(fmt, data);
+	if (data < 0)
+        ft_putnbr_base(-1 * data, base, fmt);
+	else
+        ft_putnbr_base(data, base, fmt);
+	if (fmt->minus == 1)
+        print_space(fmt, data);
 }

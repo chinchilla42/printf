@@ -12,18 +12,32 @@
 
 #include "ft_printf.h"
 
-void	dipslay_hexa_min(t_data *data)
+void		display_hexa(va_list arg, t_format *fmt)
 {
-	int n;
+	char			*base;
+	long long		data;
 
-	n = va_arg(data->arg, int);
-	ft_putnbr_base(n, "0123456789abcdef");
+	data = va_arg(arg, unsigned int);
+	if (fmt->type == 'X')
+		base = HEX_UPPER;
+	else
+		base = HEX_LOWER;
+	if (data < 0)
+        fmt->data_len = ft_nbrlen_base(-1 * data, base, fmt);
+    else
+		fmt->data_len = ft_nbrlen_base(data, base, fmt);
+	if (fmt->minus == 0)
+        print_space(fmt, data);
+	if (data < 0 )
+        ft_putchar('-', fmt);
+	print_zero(fmt, data);
+	if (data < 0)
+        ft_putnbr_base(-1 * data, base, fmt);
+	else
+        ft_putnbr_base(data, base, fmt);
+	if (fmt->minus == 1)
+        print_space(fmt, data);
 }
 
-void	display_hexa_maj(t_data *data)
-{
-	int n;
 
-	n = va_arg(data->arg, int);
-	ft_putnbr_base(n, "0123456789ABCDEF");
-}
+

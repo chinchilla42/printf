@@ -12,17 +12,50 @@
 
 #include "ft_printf.h"
 
-void	display_int(t_data *data)
+void		display_di(va_list arg, t_format *fmt)
 {
-	int n;
-	
-	n = va_arg(data->arg, int);
-	ft_putnbr_fd(n, 1);
+	char			*base;
+	long long		data;
+
+	data = va_arg(arg, int);
+    base = DEC;
+	if (data < 0)
+        fmt->data_len = ft_nbrlen_base(-1 * data, base, fmt);
+    else
+		fmt->data_len = ft_nbrlen_base(data, base, fmt);
+	if (fmt->minus == 0)
+        print_space(fmt, data);
+	if (data < 0 )
+        ft_putchar('-', fmt);
+	print_zero(fmt, data);
+	if (data < 0)
+        ft_putnbr_base(-1 * data, base, fmt);
+	else
+        ft_putnbr_base(data, base, fmt);
+	if (fmt->minus == 1)
+        print_space(fmt, data);
 }
 
-void	display_unsigned(t_data *data)
+void		display_u(va_list arg, t_format *fmt)
 {
-	unsigned n;
-	n = va_arg(data->arg, int);
-	ft_putnbr_unsigned(n);
+	char			*base;
+	long long		data;
+
+	data = va_arg(arg, unsigned int);
+	base = DEC;
+	if (data < 0)
+        fmt->data_len = ft_nbrlen_base(-1 * data, base, fmt);
+    else
+		fmt->data_len = ft_nbrlen_base(data, base, fmt);
+	if (fmt->minus == 0)
+        print_space(fmt, data);
+	if (data < 0 )
+        ft_putchar('-', fmt);
+	print_zero(fmt, data);
+	if (data < 0)
+        ft_putnbr_base(-1 * data, base, fmt);
+	else
+        ft_putnbr_base(data, base, fmt);
+	if (fmt->minus == 1)
+        print_space(fmt, data);
 }

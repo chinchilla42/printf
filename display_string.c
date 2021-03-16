@@ -12,10 +12,20 @@
 
 #include "ft_printf.h"
 
-void	display_str(t_data *data)
+void		display_str(va_list arg, t_format *fmt)
 {
-	char *str;
+	char			*s;
 
-	str = va_arg(data->arg, char *);
-	ft_putstr_fd(str, 1);
+	s = 0;
+
+	s = va_arg(arg, char *);
+	if (s == NULL)
+	        s = "(null)";
+	fmt->data_len = ft_strlen(s, fmt);
+	if (fmt->minus == 0)
+        	print_space(fmt, 0);
+    print_zero(fmt, 0);
+ 	ft_putstr(s, fmt);
+	if (fmt->minus == 1)
+        	print_space(fmt, 0);
 }

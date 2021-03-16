@@ -12,51 +12,28 @@
 
 # include "ft_printf.h"
 
-void	display_char(t_data *data)
+int				ft_printf(const char *str, ...)
 {
-	char d;
+	va_list		arg;
+	t_format		fmt;
 
-	d = va_arg(data->arg, int);
-	write(1, &d, 1);
+	clean_struct(&fmt);
+	fmt.count = 0;
+	va_start(arg, str);
+	parse(arg, (char *)str, &fmt);
+	va_end(arg);
+	return (fmt.count);
 }
 
-void	get_arg(t_data *data, char c)
+void			clean_struct(t_format *fmt)
 {
-	if (c == 'c')
-		display_char(data);
-	else if (c == 's')
-		display_str(data);
-	else if (c == 'd' || c == 'i')
-		display_int(data);
-	else if (c == 'u')
-		display_unsigned(data);
-	else if (c == 'x')
-		display_hexa_min(data); 
-	else if (c == 'X')
-		display_hexa_maj(data);
-	else if (c == 'p')
-		display_ptr(data);
-	else if (c == '%')
-		write(1, "%", 1);
-	data->i++;
-}
-
-int ft_printf(const char *fmt, ...)
-{
-	t_data data;
-	data.i = 0;
-	data.count = 0;
-	va_start(data.arg, fmt);
-	while (fmt[data.i])
-	{
-		if (fmt[data.i - 1] == '%' && data.i > 0)
-		{
-			get_arg(&data, fmt[data.i]);
-		}
-		if (fmt[data.i] != '%')
-			write(1, &fmt[data.i], 1);
-		data.i++;
-	}
-	va_end(data.arg);
-	return(data.count);
+	fmt->minus = 0;
+	fmt->zero = 0;
+	fmt->width = 0;
+	fmt->dot = 0;
+	fmt->prec = 0;
+	fmt->type = 0;
+	fmt->data_len = 0;
+	fmt->space_len = 0;
+	fmt->zero_len = 0;
 }

@@ -12,7 +12,14 @@
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c ft_printf_utils.c
+SRCS = display_char.c \
+ display_hexa.c \
+ display_number.c \
+ display_pointer.c \
+ display_string.c\
+format.c \
+ft_printf_utils.c \
+ft_printf.c 
 
 OBJS = ${SRCS:.c=.o}
 

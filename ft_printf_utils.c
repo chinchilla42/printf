@@ -17,6 +17,19 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
+void		ft_putchar_pf(char c, t_data *data)
+{
+	write(1, &c, 1);
+	data->count++;
+}
+
+void	ft_putstr(char *s)
+{
+	if (!s)
+		return ;
+	write(1, s, ft_strlen(s));
+}
+
 void	ft_putnbr_base(int nbr, char *base)
 {
 	long	nb;
@@ -77,20 +90,4 @@ char		*ft_itoa_base(long n, char *base)
 		i--;
 	}
 	return (dest);
-}
-
-void	ft_putnbr_unsigned(unsigned n)
-{
-	if (n < 0)
-	{
-		ft_putchar('-');
-		n = n * -1;
-	}
-	if (n >= 10)
-	{
-		ft_putnbr_unsigned(n / 10);
-		ft_putnbr_unsigned(n % 10);
-	}
-	if (n < 10)
-		ft_putchar(n + 48);
 }
