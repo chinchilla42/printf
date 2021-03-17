@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dataf.h                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 15:00:25 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/02/17 14:52:39 by cregazzo         ###   ########.fr       */
+/*   Created: 2021/03/17 15:31:33 by cregazzo          #+#    #+#             */
+/*   Updated: 2021/03/17 15:33:39 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,19 @@ typedef struct	s_format
 int				ft_printf(const char *str, ...);
 void			clean_struct(t_format *fmt);
 void			parse(va_list arg, char *str, t_format *fmt);
-void		get_flag(char **str, t_format *fmt);
-void		get_width(va_list arg, char **str, t_format *fmt);
-void		get_precision(va_list arg, char **str, t_format *fmt);
-void		get_type(char **str, t_format *fmt);
-void			print(va_list arg, t_format *fmt);
-void		display_c(va_list arg, t_format *fmt);
-void		display_str(va_list arg, t_format *fmt);
-void		print_space(t_format *fmt, long long data);
-void		print_zero(t_format *fmt, long long data);
-void		display_di(va_list arg, t_format *fmt);
-void		display_u(va_list arg, t_format *fmt);
-void		display_hexa(va_list arg, t_format *fmt);
-void		display_ptr(va_list arg, t_format *fmt);
+void			get_flag(char **str, t_format *fmt);
+void			get_width(va_list arg, char **str, t_format *fmt);
+void			get_precision(va_list arg, char **str, t_format *fmt);
+void			get_type(char **str, t_format *fmt);
+void			get_arg(va_list arg, t_format *fmt);
+void			display_c(va_list arg, t_format *fmt);
+void			display_str(va_list arg, t_format *fmt);
+void			print_space(t_format *fmt, long long data);
+void			print_zero(t_format *fmt, long long data);
+void			display_di(va_list arg, t_format *fmt);
+void			display_u(va_list arg, t_format *fmt);
+void			display_hexa(va_list arg, t_format *fmt);
+void			display_ptr(va_list arg, t_format *fmt);
 void			ft_putchar(char c, t_format *fmt);
 void			ft_putstr(char *s, t_format *fmt);
 void			ft_putnbr_base(long long n, char *base, t_format *fmt);

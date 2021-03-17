@@ -6,13 +6,13 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:02:20 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/02 12:02:39 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/17 14:29:31 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
+#include "ft_printf.h"
 
-void			parse(va_list arg, char *str, t_format *fmt)
+void	parse(va_list arg, char *str, t_format *fmt)
 {
 	while (*str)
 	{
@@ -23,7 +23,7 @@ void			parse(va_list arg, char *str, t_format *fmt)
 			get_width(arg, &str, fmt);
 			get_precision(arg, &str, fmt);
 			get_type(&str, fmt);
-			print(arg, fmt);
+			get_arg(arg, fmt);
 			clean_struct(fmt);
 		}
 		else
@@ -31,7 +31,7 @@ void			parse(va_list arg, char *str, t_format *fmt)
 	}
 }
 
-void		get_flag(char **str, t_format *fmt)
+void	get_flag(char **str, t_format *fmt)
 {
 	while (**str == '-' || **str == '0')
 	{
@@ -45,7 +45,7 @@ void		get_flag(char **str, t_format *fmt)
 		fmt->zero = 0;
 }
 
-void		get_width(va_list arg, char **str, t_format *fmt)
+void	get_width(va_list arg, char **str, t_format *fmt)
 {
 	if (**str == '*')
 	{
@@ -66,7 +66,7 @@ void		get_width(va_list arg, char **str, t_format *fmt)
 	}
 }
 
-void		get_precision(va_list arg, char **str, t_format *fmt)
+void	get_precision(va_list arg, char **str, t_format *fmt)
 {
 	if (**str == '.')
 	{
@@ -90,7 +90,7 @@ void		get_precision(va_list arg, char **str, t_format *fmt)
 	}
 }
 
-void		get_type(char **str, t_format *fmt)
+void	get_type(char **str, t_format *fmt)
 {
 	if (**str == 'c' || **str == 's' || **str == 'p' || **str == 'd' ||
 		**str == 'i' || **str == 'u' || **str == 'x' || **str == 'X' ||
