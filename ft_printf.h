@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 15:31:33 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/17 15:33:39 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/18 12:15:13 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void			get_type(char **str, t_format *fmt);
 void			get_arg(va_list arg, t_format *fmt);
 void			display_c(va_list arg, t_format *fmt);
 void			display_str(va_list arg, t_format *fmt);
+void			display_pc(t_format *fmt);
 void			print_space(t_format *fmt, long long data);
 void			print_zero(t_format *fmt, long long data);
 void			display_di(va_list arg, t_format *fmt);

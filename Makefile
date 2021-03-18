@@ -6,7 +6,7 @@
 #    By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/08 14:58:45 by cregazzo          #+#    #+#              #
-#    Updated: 2021/03/17 14:37:23 by cregazzo         ###   ########.fr        #
+#    Updated: 2021/03/18 12:16:46 by cregazzo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = libftprintf.a
 SRCS = 	display_char.c \
 		display_hexa.c \
 		display_number.c \
+		display_percent.c \
  		display_pointer.c \
  		display_string.c\
 		format.c \

@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:03:34 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/17 15:36:51 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/18 12:26:37 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	get_arg(va_list arg, t_format *fmt)
 	else if (fmt->type == 'c')
 		display_c(arg, fmt);
 	else if (fmt->type == '%')
-		ft_putchar('%', fmt);
+		display_pc(fmt);
 }
 
 void	print_space(t_format *fmt, long long data)
