@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 11:08:34 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/18 11:17:48 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/19 14:14:41 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		display_ptr(va_list arg, t_format *fmt)
 {
 	char			*base;
-	long long		data;
+	uint64_t			data;
 
 	data = va_arg(arg, unsigned long);
 	base = HEX_LOWER;

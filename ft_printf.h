@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 15:31:33 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/18 12:15:13 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/18 15:22:37 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ typedef struct	s_format
 {
 	int			minus;
 	int			zero;
+	int			plus;
+	int			space;
+	int			dash;
 	int			width;
 	int			dot;
 	int			prec;
@@ -52,6 +55,7 @@ void			display_di(va_list arg, t_format *fmt);
 void			display_u(va_list arg, t_format *fmt);
 void			display_hexa(va_list arg, t_format *fmt);
 void			display_ptr(va_list arg, t_format *fmt);
+void			print_dash(t_format *fmt);
 void			ft_putchar(char c, t_format *fmt);
 void			ft_putstr(char *s, t_format *fmt);
 void			ft_putnbr_base(long long n, char *base, t_format *fmt);

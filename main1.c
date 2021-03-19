@@ -26,7 +26,7 @@ int main ()
     printf("45 en hexa = %x\n", 45);
     ft_printf("45 en hexa = %x\n", 45);
 	//DEBUG
-char *test = NULL;
+/*char *test = NULL;
 	const char *str = "%-0*.%\n";
 	t_flag all_flag;
 	ft_get_buf_start("%*.*s\n",  &all_flag);
@@ -235,6 +235,6 @@ printf("%d\n", printf("%*.abc10s\n", 10, "coucou"));
 	printf("%d\n", ft_printf("%-00000-----*i", 12, 8));
 	printf("%d\n", ft_printf("%5"));
 	printf("%d\n", ft_printf("%07"));
-	printf("%d\n", ft_printf("%-7-----"));	
+	printf("%d\n", ft_printf("%-7-----"));*/	
 }
 

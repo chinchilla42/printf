@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 11:27:49 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/18 12:24:54 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/18 15:44:23 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ void	clean_struct(t_format *fmt)
 {
 	fmt->minus = 0;
 	fmt->zero = 0;
+	fmt->plus = 0;
+	fmt ->space = 0;
+	fmt->dash = 0;
 	fmt->width = 0;
 	fmt->dot = 0;
 	fmt->prec = 0;

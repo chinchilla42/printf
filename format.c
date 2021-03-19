@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:02:20 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/18 12:25:45 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/18 16:00:37 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,18 @@ void	parse(va_list arg, char *str, t_format *fmt)
 
 void	get_flag(char **str, t_format *fmt)
 {
-	while (**str == '-' || **str == '0')
+	while (**str == '-' || **str == '0' || **str == '+' || ** str == ' ' || **str == '#')
 	{
 		if (**str == '-')
 			fmt->minus = 1;
 		if (**str == '0')
 			fmt->zero = 1;
+		if (**str == '+')
+			fmt->plus=1;
+		if (**str == ' ')
+			fmt->space = 1;
+		if (**str == '#')
+			fmt->dash = 1;
 		(*str)++;
 	}
 	if (fmt->minus && fmt->zero)
