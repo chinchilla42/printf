@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:14:27 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/22 11:13:26 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/22 13:44:50 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,41 @@
 
 int main()
 {
-	printf("|%#12x|\n", 45);	
- 	ft_printf("|%#12x|\n", 45);	
+	//printf("|%#12x|\n", 45);	
+	printf(" %#x ", 0);
+	printf(" %#2x ", 0);
+	printf(" %#02x ", 0);
+	printf(" %#-03x ", 0);
+	printf(" %#-03.x ", 0);
+	printf(" %#-03.1x ", 0);
+	printf(" %#-03.2x ", 0);
+	printf(" %#-03.*x ", 2, 0);
+	printf(" %#x ", 1);
+	printf(" %#2x ", 1);
+	printf(" %#02x ", 1);
+	printf(" %#-03x ", 1);
+	printf(" %#-03.x ", 1);
+	printf(" %#-03.1x ", 1);
+	printf(" %#-03.2x ", 1);
+	printf(" %#-03.*x ", 2, 1);
+	printf(" %#X ", 0);
+	printf(" %#2X ", 0);
+	printf(" %#02X ", 0);
+	printf(" %#-03X ", 0);
+	printf(" %#-03.X ", 0);
+	printf(" %#-03.1X ", 0);
+	printf(" %#-03.2X ", 0);
+	printf(" %#-03.*X ", 2, 0);
+	printf(" %#X ", 1);
+	printf(" %#2X ", 1);
+	printf(" %#02X ", 1);
+	printf(" %#-03X ", 1);
+	printf(" %#-03.X ", 1);
+	printf(" %#-03.1X ", 1);
+	printf(" %#-03.2X ", 1);
+	printf(" %#-03.*X ", 2, 1);
+
+	/* 	ft_printf("|%#12x|\n", 45);	
 	printf("|%#12x|\n", -45);	
 	ft_printf("|%#12x|\n", -45);	
 	printf("|%#012x|\n", 45);	
@@ -26,7 +59,7 @@ int main()
 	printf("|%#-12x|\n", 45);
 	ft_printf("|%#-12x|\n", 45);
 	printf("|%#-12x|\n", -45);
-	ft_printf("|%#-12x|\n", -45);
+	ft_printf("|%#-12x|\n", -45);*/
 
 /*	printf("%5%\n");
 	ft_printf("%5%\n");

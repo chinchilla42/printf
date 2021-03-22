@@ -6,7 +6,7 @@
 #    By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/08 14:58:45 by cregazzo          #+#    #+#              #
-#    Updated: 2021/03/18 16:00:40 by cregazzo         ###   ########.fr        #
+#    Updated: 2021/03/22 11:42:39 by cregazzo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ $(NAME): ${OBJS}
 
 all:	${NAME}
 
-bonus: ${all}
+bonus: all
 
 clean:
 		${RM} ${OBJS}
