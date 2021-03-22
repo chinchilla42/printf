@@ -6,13 +6,13 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 11:10:39 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/22 09:40:12 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/22 11:21:18 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		display_hexa(va_list arg, t_format *fmt)
+void	display_hexa(va_list arg, t_format *fmt)
 {
 	char			*base;
 	long long		data;
@@ -26,31 +26,24 @@ void		display_hexa(va_list arg, t_format *fmt)
 		fmt->data_len = ft_nbrlen_base(-1 * data, base, fmt);
 	else
 		fmt->data_len = ft_nbrlen_base(data, base, fmt);
-	if(fmt->dash == 1)
-		fmt->data_len +=2;
+	if (fmt->dash == 1)
+		fmt->data_len += 2;
 	if (fmt->minus == 0)
 		print_space(fmt, data);
-	//print_dash(fmt)
-	if (data < 0)
-		ft_putchar('-', fmt);
-	//	print_dash(fmt);
-	print_zero(fmt, data);
 	print_dash(fmt);
-	if (data < 0)
-		ft_putnbr_base(-1 * data, base, fmt);
-	else
-		ft_putnbr_base(data, base, fmt);
+	print_zero(fmt, data);
+	ft_putnbr_base(data, base, fmt);
 	if (fmt->minus == 1)
 		print_space(fmt, data);
 }
 
 void	print_dash(t_format *fmt)
 {
-	if(fmt->dash == 1)
+	if (fmt->dash == 1)
 	{
-		if(fmt->type == 'x')
+		if (fmt->type == 'x')
 			ft_putstr("0x", fmt);
-		if(fmt->type == 'X')
+		if (fmt->type == 'X')
 			ft_putstr("0X", fmt);
-	}	
+	}
 }

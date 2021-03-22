@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:14:27 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/19 14:14:32 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/22 11:13:26 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,27 @@
 
 int main()
 {
-	printf(" %10p %-10p \n", 0, 0);
-	printf(" %10p %-10p \n", 0, 0);
+	printf("|%#12x|\n", 45);	
+ 	ft_printf("|%#12x|\n", 45);	
+	printf("|%#12x|\n", -45);	
+	ft_printf("|%#12x|\n", -45);	
+	printf("|%#012x|\n", 45);	
+	ft_printf("|%#012x|\n", 45);	
+	printf("|%#012x|\n", -45);	
+	ft_printf("|%#012x|\n", -45);	
+	printf("|%#-12x|\n", 45);
+	ft_printf("|%#-12x|\n", 45);
+	printf("|%#-12x|\n", -45);
+	ft_printf("|%#-12x|\n", -45);
 
+/*	printf("%5%\n");
+	ft_printf("%5%\n");
+	printf("%-5%\n");
+	ft_printf("%-5%\n");
+	printf("%05%\n");
+	ft_printf("%05%\n");
+	printf("%-05%\n");
+	ft_printf("%-05%\n");*/
 	/*printf("sans flags :\n");
 	printf("|%d|\n", 0);
 	ft_printf("|%d|\n", 0);
