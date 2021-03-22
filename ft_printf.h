@@ -58,8 +58,8 @@ void			display_ptr(va_list arg, t_format *fmt);
 void			print_dash(t_format *fmt);
 void			ft_putchar(char c, t_format *fmt);
 void			ft_putstr(char *s, t_format *fmt);
-void			ft_putnbr_base(long long n, char *base, t_format *fmt);
+void			ft_putnbr_base(unsigned long n, char *base, t_format *fmt);
 int				ft_strlen(char *str, t_format *fmt);
-int				ft_nbrlen_base(long long n, char *base, t_format *fmt);
+int				ft_nbrlen_base(unsigned long n, char *base, t_format *fmt);
 
 #endif

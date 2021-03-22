@@ -15,7 +15,10 @@
 
 int main()
 {
-	printf("sans flags :\n");
+	printf(" %10p %-10p \n", 0, 0);
+	printf(" %10p %-10p \n", 0, 0);
+
+	/*printf("sans flags :\n");
 	printf("|%d|\n", 0);
 	ft_printf("|%d|\n", 0);
 
@@ -98,7 +101,7 @@ int main()
 	int n = 125;
 	int *ptr = &n;
 	printf("|%25p|\n", ptr);
-	printf("|%-25p|\n", ptr);
+	printf("|%-25p|\n", ptr);*/
 
 	return (0);
 }

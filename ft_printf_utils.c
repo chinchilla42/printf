@@ -33,9 +33,9 @@ void	ft_putstr(char *s, t_format *fmt)
 			ft_putchar(s[i++], fmt);
 }
 
-void	ft_putnbr_base(long long n, char *base, t_format *fmt)
+void	ft_putnbr_base(unsigned long n, char *base, t_format *fmt)
 {
-	int	print;
+	unsigned long	print;
 
 	if (n == 0 && fmt->dot && !fmt->prec)
 		return ;
@@ -57,10 +57,10 @@ int		ft_strlen(char *str, t_format *fmt)
 	return (i);
 }
 
-int		ft_nbrlen_base(long long n, char *base, t_format *fmt)
+int		ft_nbrlen_base(unsigned long n, char *base, t_format *fmt)
 {
 	int	i;
-	int	print;
+	unsigned long	print;
 
 	if (n == 0 && fmt->dot && !fmt->prec)
 		return (0);

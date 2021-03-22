@@ -15,24 +15,15 @@
 void		display_ptr(va_list arg, t_format *fmt)
 {
 	char			*base;
-	uint64_t			data;
+	unsigned long			data;
 
 	data = va_arg(arg, unsigned long);
 	base = HEX_LOWER;
-	if (data < 0)
-		fmt->data_len = ft_nbrlen_base(-1 * data, base, fmt);
-	else
-		fmt->data_len = ft_nbrlen_base(data, base, fmt);
+	fmt->data_len = ft_nbrlen_base(data, base, fmt);
 	if (fmt->minus == 0)
 		print_space(fmt, data);
-	if (data < 0)
-		ft_putchar('-', fmt);
 	ft_putstr("0x", fmt);
-	print_zero(fmt, data);
-	if (data < 0)
-		ft_putnbr_base(-1 * data, base, fmt);
-	else
-		ft_putnbr_base(data, base, fmt);
+	ft_putnbr_base(data, base, fmt);
 	if (fmt->minus == 1)
 		print_space(fmt, data);
 }
