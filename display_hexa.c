@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 11:10:39 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/18 17:00:45 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/22 09:40:12 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void		display_hexa(va_list arg, t_format *fmt)
 	//print_dash(fmt)
 	if (data < 0)
 		ft_putchar('-', fmt);
-//	print_dash(fmt);
+	//	print_dash(fmt);
 	print_zero(fmt, data);
 	print_dash(fmt);
 	if (data < 0)
