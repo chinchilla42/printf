@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:14:27 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/22 13:44:50 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/24 14:59:40 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,27 @@
 
 int main()
 {
-	//printf("|%#12x|\n", 45);	
+	printf("1-->|%0*.%|<--\n", -1);
+	ft_printf("1-->|%0*.%|<--\n", -1);
+	printf("2-->|%0*.%|<--\n", 0);
+	ft_printf("2-->|%0*.%|<--\n", 0);
+	printf("3-->|%0*.%|<--\n", 1);
+	ft_printf("3-->|%0*.%|<--\n", 1);
+	printf("4-->|%0*.%|<--\n", 2);
+	ft_printf("4-->|%0*.%|<--\n", 2);
+	printf("5-->|%0*.%|<--\n", 3);
+	ft_printf("5-->|%0*.%|<--\n", 3);
+	printf("6-->|%04.3%|<--\n");
+	ft_printf("6-->|%04.3%|<--\n");
+	printf("7-->|%04.4%|<--\n");
+	ft_printf("7-->|%04.4%|<--\n");
+	printf("8-->|%04%|<--\n");
+	ft_printf("8-->|%04%|<--\n");
+	printf("9-->|%--4.%|<--\n");
+	ft_printf("9-->|%--4.%|<--\n");
+	printf("10-->|%--4.*%|<--\n", -4);
+	ft_printf("10-->|%--4.*%|<--\n", -4);
+	/*printf("|%#12x|\n", 45);	
 	printf(" %#x ", 0);
 	printf(" %#2x ", 0);
 	printf(" %#02x ", 0);
@@ -47,7 +67,7 @@ int main()
 	printf(" %#-03.X ", 1);
 	printf(" %#-03.1X ", 1);
 	printf(" %#-03.2X ", 1);
-	printf(" %#-03.*X ", 2, 1);
+	printf(" %#-03.*X ", 2, 1);*/
 
 	/* 	ft_printf("|%#12x|\n", 45);	
 	printf("|%#12x|\n", -45);	
@@ -61,14 +81,15 @@ int main()
 	printf("|%#-12x|\n", -45);
 	ft_printf("|%#-12x|\n", -45);*/
 
-/*	printf("%5%\n");
-	ft_printf("%5%\n");
-	printf("%-5%\n");
-	ft_printf("%-5%\n");
-	printf("%05%\n");
-	ft_printf("%05%\n");
-	printf("%-05%\n");
-	ft_printf("%-05%\n");*/
+	printf("11%5%\n");
+	ft_printf("11%5%\n");
+	printf("12%-5%\n");
+	ft_printf("12%-5%\n");
+	printf("13%05%\n");
+	ft_printf("13%05%\n");
+	printf("14%-05%\n");
+	ft_printf("14%-05%\n");
+
 	/*printf("sans flags :\n");
 	printf("|%d|\n", 0);
 	ft_printf("|%d|\n", 0);

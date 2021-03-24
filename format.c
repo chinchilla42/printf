@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:02:20 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/22 09:45:35 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/24 17:18:55 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,6 @@ void	get_flag(char **str, t_format *fmt)
 			fmt->minus = 1;
 		if (**str == '0')
 			fmt->zero = 1;
-		if (**str == '+')
-			fmt->plus = 1;
-		if (**str == ' ')
-			fmt->space = 1;
-		if (**str == '#')
-			fmt->dash = 1;
 		(*str)++;
 	}
 	if (fmt->minus && fmt->zero)

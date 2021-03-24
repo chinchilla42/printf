@@ -6,13 +6,35 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:03:34 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/22 14:32:18 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/24 17:19:03 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 void	get_arg(va_list arg, t_format *fmt)
+{
+	char	*spec_char;
+	int		i;
+	void	(*spec_funct[TOTAL_SPECIFIER])(va_list, t_format*);
+
+	i = -1;
+	spec_char = "cspdiuxX%";
+	spec_funct[CHAR] = &display_c;
+	spec_funct[STRING] = &display_str;
+	spec_funct[POINTER] = &display_ptr;
+	spec_funct[INT_D] = &display_di;
+	spec_funct[INT_I] = &display_di;
+	spec_funct[UNSIGNED_INT] = &display_u;
+	spec_funct[HEXA_MIN] = &display_hexa;
+	spec_funct[HEXA_MAJ] = &display_hexa;
+	spec_funct[PERCENT] = &display_pc;
+	while (++i < TOTAL_SPECIFIER)
+		if (spec_char[i] == fmt->type)
+			(*spec_funct[i])(arg, fmt);
+}
+
+/*void	get_arg(va_list arg, t_format *fmt)
 {
 	if (fmt->type == 'd' || fmt->type == 'i')
 		display_di(arg, fmt);
@@ -27,10 +49,8 @@ void	get_arg(va_list arg, t_format *fmt)
 	else if (fmt->type == 'c')
 		display_c(arg, fmt);
 	else if (fmt->type == '%')
-		display_pc(fmt);
-	else if (fmt->type == 'n')
-		ft_putnbr_base(fmt->count, "10", fmt);
-}
+		display_pc(arg, fmt);
+}*/
 
 void	print_space(t_format *fmt, long long data)
 {
