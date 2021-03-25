@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:03:34 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/24 17:19:03 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/25 16:02:23 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	get_arg(va_list arg, t_format *fmt)
 
 void	print_space(t_format *fmt, long long data)
 {
-	if (fmt->type == 's' || fmt->type == 'c' || fmt->type == '%')
+	if (fmt->type == 's' || fmt->type == 'c')
 	{
 		if (fmt->zero && !fmt->minus && !fmt->dot && !fmt->prec)
 			return ;
@@ -82,7 +82,7 @@ void	print_space(t_format *fmt, long long data)
 
 void	print_zero(t_format *fmt, long long data)
 {
-	if (fmt->type == 's' || fmt->type == 'c' || fmt->type == '%')
+	if (fmt->type == 's' || fmt->type == 'c')
 	{
 		if (fmt->zero && !fmt->minus)
 			fmt->zero_len = fmt->width - fmt->data_len;
