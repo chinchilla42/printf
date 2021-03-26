@@ -63,6 +63,8 @@ void			display_pc(va_list arg, t_format *fmt);
 void			print_space(t_format *fmt, long long data);
 void			print_zero(t_format *fmt, long long data);
 void			display_di(va_list arg, t_format *fmt);
+void			print_space_pc(t_format *fmt);
+void			print_zero_pc(t_format *fmt);
 void			display_u(va_list arg, t_format *fmt);
 void			display_hexa(va_list arg, t_format *fmt);
 void			display_ptr(va_list arg, t_format *fmt);
