@@ -1,4 +1,3 @@
-/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   display_percent.c                                  :+:      :+:    :+:   */
@@ -20,15 +19,19 @@ void	display_pc(va_list arg, t_format *fmt)
 	pc = '%';
 	fmt->data_len = 1;
 	if (fmt->data_len < fmt->prec)
-		fmt->space_len = fmt->width - fmt->prec;
+		fmt->zero_len = fmt->width - fmt->prec;
 	else
-		fmt->space_len = fmt->width - fmt->data_len;
-	if (fmt->zero && !fmt->dot && !fmt->prec)
-		fmt->space_len -= fmt->width - fmt->data_len;
-	if (fmt->zero && !fmt->dot && !fmt->prec)
 		fmt->zero_len = fmt->width - fmt->data_len;
+	if (fmt->zero && !fmt->dot && !fmt->prec)
+	{	
+		fmt->zero_len = fmt->width - fmt->space_len;
+		fmt->space_len = fmt->width - fmt->data_len  - fmt->zero_len;
+	}
 	else
+	{
 		fmt->zero_len = fmt->prec - fmt->data_len;
+		fmt->space_len = fmt->prec - fmt->data_len - fmt->zero_len;	
+	}
 	if (fmt->minus == 0)
 		print_space_pc(fmt);
 	print_zero_pc(fmt);
