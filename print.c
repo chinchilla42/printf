@@ -54,7 +54,7 @@ void	get_arg(va_list arg, t_format *fmt)
 
 void	print_space(t_format *fmt, long long data)
 {
-	if (fmt->type == 's' || fmt->type == 'c')
+	/*if (fmt->type == 's')
 	{
 		if (fmt->zero && !fmt->minus && !fmt->dot && !fmt->prec)
 			return ;
@@ -64,7 +64,7 @@ void	print_space(t_format *fmt, long long data)
 			fmt->space_len = fmt->width - fmt->data_len;
 	}
 	else
-	{
+	{*/
 		if (fmt->data_len < fmt->prec)
 			fmt->space_len = fmt->width - fmt->prec;
 		else
@@ -75,7 +75,7 @@ void	print_space(t_format *fmt, long long data)
 			fmt->space_len -= 2;
 		if (fmt->zero && !fmt->dot && !fmt->prec)
 			fmt->space_len -= fmt->width - fmt->data_len;
-	}
+//	}
 	while (fmt->space_len-- > 0)
 		ft_putchar(' ', fmt);
 }
