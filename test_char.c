@@ -15,26 +15,26 @@
 
 int main()
 {
-	printf("1-->|%0*.%|<--\n", -1);
-	ft_printf("1-->|%0*.%|<--\n", -1);
-	printf("2-->|%0*.%|<--\n", 0);
-	ft_printf("2-->|%0*.%|<--\n", 0);
-	printf("3-->|%0*.%|<--\n", 1);
-	ft_printf("3-->|%0*.%|<--\n", 1);
+	printf("1-->|%0*.c|<--\n", -1, 'z');
+	ft_printf("1-->|%0*.c|<--\n", -1, 'z');
+	printf("2-->|%0*.c|<--\n", 0, 'z');
+	ft_printf("2-->|%0*.c|<--\n", 0, 'z');
+	printf("3-->|%0*.c|<--\n", 1, 'z');
+	ft_printf("3-->|%0*.c|<--\n", 1, 'z');
 	printf("4-->|%0*.c|<--\n", 2, 'g');
 	ft_printf("4-->|%0*.c|<--\n", 2, 'g');
-	printf("5-->|%0*.s|<--\n", 3, "batman");
-	ft_printf("5-->|%0*.s|<--\n", 3, "batman");
-	printf("6-->|%04.3%|<--\n");
-	ft_printf("6-->|%04.3%|<--\n");
-	printf("7-->|%04.4%|<--\n");
-	ft_printf("7-->|%04.4%|<--\n");
-	printf("8-->|%04%|<--\n");
-	ft_printf("8-->|%04%|<--\n");
-	printf("9-->|%--4.%|<--\n");
-	ft_printf("9-->|%--4.%|<--\n");
-	printf("10-->|%--4.*%|<--\n", -4);
-	ft_printf("10-->|%--4.*%|<--\n", -4);
+	printf("5-->|%0*.c|<--\n", 3, 'z');
+	ft_printf("5-->|%0*.c|<--\n", 3, 'z');
+	printf("6-->|%04.3c|<--\n", 'z');
+	ft_printf("6-->|%04.3c|<--\n", 'z');
+	printf("7-->|%04.4c|<--\n", 'e');
+	ft_printf("7-->|%04.4c|<--\n", 'e');
+	printf("8-->|%04c|<--\n", 'e');
+	ft_printf("8-->|%04c|<--\n", 'e');
+	printf("9-->|%--4.c|<--\n", 'e');
+	ft_printf("9-->|%--4.c|<--\n", 'e');
+	printf("10-->|%--4.*c|<--\n", -4, 'e');
+	ft_printf("10-->|%--4.*c|<--\n", -4, 'e');
 	/*printf("|%#12x|\n", 45);	
 	printf(" %#x ", 0);
 	printf(" %#2x ", 0);
@@ -81,14 +81,14 @@ int main()
 	printf("|%#-12x|\n", -45);
 	ft_printf("|%#-12x|\n", -45);*/
 
-	printf("11%5%\n");
+	/*printf("11%5%\n");
 	ft_printf("11%5%\n");
 	printf("12%-5%\n");
 	ft_printf("12%-5%\n");
 	printf("13%05%\n");
 	ft_printf("13%05%\n");
 	printf("14%-05%\n");
-	ft_printf("14%-05%\n");
+	ft_printf("14%-05%\n");*/
 
 	/*printf("sans flags :\n");
 	printf("|%d|\n", 0);
