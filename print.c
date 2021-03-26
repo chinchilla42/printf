@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:03:34 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/25 16:02:23 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/26 16:36:17 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	get_arg(va_list arg, t_format *fmt)
 
 void	print_space(t_format *fmt, long long data)
 {
-	/*if (fmt->type == 's')
+	if (fmt->type == 's')
 	{
 		if (fmt->zero && !fmt->minus && !fmt->dot && !fmt->prec)
 			return ;
@@ -64,7 +64,7 @@ void	print_space(t_format *fmt, long long data)
 			fmt->space_len = fmt->width - fmt->data_len;
 	}
 	else
-	{*/
+	{
 		if (fmt->data_len < fmt->prec)
 			fmt->space_len = fmt->width - fmt->prec;
 		else
@@ -75,7 +75,7 @@ void	print_space(t_format *fmt, long long data)
 			fmt->space_len -= 2;
 		if (fmt->zero && !fmt->dot && !fmt->prec)
 			fmt->space_len -= fmt->width - fmt->data_len;
-//	}
+	}
 	while (fmt->space_len-- > 0)
 		ft_putchar(' ', fmt);
 }
