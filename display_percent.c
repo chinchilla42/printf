@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:06:57 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/25 16:02:18 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/03/31 17:42:59 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,12 @@ void	display_pc(va_list arg, t_format *fmt)
 	(void)arg;
 	pc = '%';
 	fmt->data_len = 1;
-	if (fmt->width && fmt->dot && !fmt->prec)
+	if (fmt->width > 1)
 	{
-		fmt->zero_len = fmt->width - fmt-> data_len;
-		fmt->space_len  = fmt->width - fmt->zero_len;
+		if (fmt->zero == 1)
+			fmt->zero_len = fmt->width - fmt->data_len;
+		fmt->space_len = fmt->width - fmt->data_len - fmt->zero_len;
 	}
-	if (fmt->width && fmt->dot && fmt->prec && fmt->width > fmt-> prec)
-	{
-		fmt->zero_len = fmt->width - fmt->data_len;
-		fmt->space_len = fmt->width - fmt->zero_len - fmt->data_len;
-	}
-
-	/*if (fmt->data_len < fmt->prec)
-		fmt->zero_len = fmt->width - fmt->prec;
-	else
-		fmt->zero_len = fmt->width - fmt->data_len;
-	if (fmt->zero && !fmt->dot && !fmt->prec)
-	{
-		fmt->zero_len = fmt->prec - fmt->data_len;
-		fmt->space_len -= fmt->prec - fmt->data_len - fmt->zero_len;
-	}
-	else
-	{
-		fmt->zero_len = fmt->prec - fmt->data_len;
-	    fmt->space_len = fmt->prec - fmt->data_len - fmt->zero_len; 
-	}*/
 	if (fmt->minus == 0)
 		print_space_pc(fmt);
 	print_zero_pc(fmt);
@@ -51,7 +32,6 @@ void	display_pc(va_list arg, t_format *fmt)
 	if (fmt->minus == 1)
 		print_space_pc(fmt);
 }
-
 
 void	print_space_pc(t_format *fmt)
 {
