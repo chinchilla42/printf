@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:02:20 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/25 16:02:20 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/04/01 14:35:40 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,18 @@ void	get_precision(va_list arg, char **str, t_format *fmt)
 
 void	get_type(char **str, t_format *fmt)
 {
-	if (**str == 'c' || **str == 's' || **str == 'p' || **str == 'd' ||
-		**str == 'i' || **str == 'u' || **str == 'x' || **str == 'X' ||
-		**str == '%')
-		fmt->type = **str;
-	else
-		return ;
-	(*str)++;
+	int		i;
+	char	*spec_char;
+
+	i = -1;
+	spec_char = SPEC_CHAR;
+	while (spec_char[++i])
+	{
+		if (**str == spec_char[i])
+		{
+			fmt->type = **str;
+			(*str)++;
+			break ;
+		}
+	}
 }

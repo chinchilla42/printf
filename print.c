@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:03:34 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/31 17:44:40 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/04/01 14:31:07 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	get_arg(va_list arg, t_format *fmt)
 	void	(*spec_funct[TOTAL_SPECIFIER])(va_list, t_format*);
 
 	i = -1;
-	spec_char = "cspdiuxX%";
+	spec_char = SPEC_CHAR;
 	spec_funct[CHAR] = &display_c;
 	spec_funct[STRING] = &display_str;
 	spec_funct[POINTER] = &display_ptr;
@@ -33,24 +33,6 @@ void	get_arg(va_list arg, t_format *fmt)
 		if (spec_char[i] == fmt->type)
 			(*spec_funct[i])(arg, fmt);
 }
-
-/*void	get_arg(va_list arg, t_format *fmt)
-{
-	if (fmt->type == 'd' || fmt->type == 'i')
-		display_di(arg, fmt);
-	else if (fmt->type == 'u')
-		display_u(arg, fmt);
-	else if (fmt->type == 'x' || fmt->type == 'X')
-		display_hexa(arg, fmt);
-	else if (fmt->type == 'p')
-		display_ptr(arg, fmt);
-	else if (fmt->type == 's')
-		display_str(arg, fmt);
-	else if (fmt->type == 'c')
-		display_c(arg, fmt);
-	else if (fmt->type == '%')
-		display_pc(arg, fmt);
-}*/
 
 void	print_space(t_format *fmt, long long data)
 {

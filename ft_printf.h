@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 15:31:33 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/24 15:10:12 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/04/01 14:30:01 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define SPEC_CHAR "cspdiuxX%"
 # define DEC "0123456789"
 # define HEX_LOWER "0123456789abcdef"
 # define HEX_UPPER "0123456789ABCDEF"
@@ -38,7 +39,6 @@ typedef struct	s_format
 {
 	int			minus;
 	int			zero;
-	int			space;
 	int			width;
 	int			dot;
 	int			prec;
