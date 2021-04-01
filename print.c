@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:03:34 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/04/01 14:31:07 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/04/01 14:50:30 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	print_space(t_format *fmt, long long data)
 
 void	print_zero(t_format *fmt, long long data)
 {
-	if (fmt->type == 's' || fmt->type == 'c')
+	if (fmt->type == 's')
 	{
 		if (fmt->zero && !fmt->minus)
 			fmt->zero_len = fmt->width - fmt->data_len;

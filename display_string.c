@@ -6,7 +6,7 @@
 /*   By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 11:09:09 by cregazzo          #+#    #+#             */
-/*   Updated: 2021/03/24 14:20:37 by cregazzo         ###   ########.fr       */
+/*   Updated: 2021/04/01 14:39:33 by cregazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void		display_str(va_list arg, t_format *fmt)
 {
 	char			*s;
 
-	s = 0;
 	s = va_arg(arg, char *);
 	if (s == NULL)
 		s = "(null)";

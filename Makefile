@@ -6,7 +6,7 @@
 #    By: cregazzo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/08 14:58:45 by cregazzo          #+#    #+#              #
-#    Updated: 2021/03/22 11:42:39 by cregazzo         ###   ########.fr        #
+#    Updated: 2021/04/01 14:38:47 by cregazzo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ SRCS = 	display_char.c \
 		ft_printf_utils.c \
 		print.c
 
-
 OBJS = ${SRCS:.c=.o}
 
 CC		= cc
@@ -32,7 +31,6 @@ RM		= rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
@@ -40,8 +38,6 @@ $(NAME): ${OBJS}
 			ar rcs ${NAME} ${OBJS}
 
 all:	${NAME}
-
-bonus: all
 
 clean:
 		${RM} ${OBJS}
